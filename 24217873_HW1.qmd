@@ -1,0 +1,74 @@
+---
+title: "STAT40830 - Homework 1"
+author: "Akash Ajaykumar Nair - 24217873"
+format: 
+  pdf:
+    echo: false
+    geometry:                  
+      - top = 0.5in
+      - bottom = 0.5in
+      - left = 0.5in
+      - right = 0.5in
+      - a4paper
+    include-in-header: 
+      text: |
+        \usepackage{xcolor}
+editor: visual
+execute: 
+  error: true                        
+  warning: false
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+# Load required libraries
+library(palmerpenguins)
+library(ggplot2)
+```
+
+# Introduction: Penguin Species and Their Physical Traits
+
+The **Palmer Penguins** dataset provides size measurements for three penguin species: \textcolor{red}{Adelie, Chinstrap and Gentoo} living in the Palmer Archipelago, Antarctica. It includes data on features like bill dimensions, flipper length and body mass, along with the species and island of each observation.
+This report uses a scatter plot to examine how bill length and bill depth vary by species. These features are often used to distinguish between penguin types.
+
+# Dataset Summary
+
+Variables:
+
+- `bill_length_mm`: Bill length in millimeters
+- `bill_depth_mm`: Bill depth in millimeters
+- `species`: Penguin species (*Adelie, Chinstrap, Gentoo*)
+
+```{r}
+# Summary of dataset
+summary(penguins[, c("species", "bill_length_mm", "bill_depth_mm")])
+```
+
+# Scatter Plot: Bill Length vs Bill Depth
+
+```{r, fig.align='center'}
+# Create scatter plot
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point(size = 2) +
+  labs(
+    title = "Penguin Bill Dimensions by Species",
+    x = "Bill Length (mm)",
+    y = "Bill Depth (mm)",
+    color = "Species"
+  ) +
+  theme_minimal()
+```
+
+# Description of the plot 
+
+This scatter plot shows clear differences in bill dimensions among species:
+
+- Adelie penguins have shorter, deeper bills.
+
+- Gentoo penguins have longer, shallower bills.
+
+- Chinstrap penguins fall in between.
+
+This separation makes bill measurements a useful tool for distinguishing species.
+
+# Conclusion
+The plot clearly demonstrates how bill dimensions can effectively distinguish penguin species, making these features useful in classification models or ecological field studies.
