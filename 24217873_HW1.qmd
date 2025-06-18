@@ -22,6 +22,7 @@ execute:
 # Updated for GitHub - Homework 2
 
 - First updation in .qmd
+- Second updation in .qmd
 
 ```{r setup, include=FALSE, message=FALSE, warning=FALSE}
 # Load required libraries
