@@ -19,7 +19,7 @@ execute:
   warning: false
 ---
 
-# Updated for GitHub - Homework 2
+# Updated for GitHub - Homework
 
 - First updation in .qmd
 - Second updation in .qmd
